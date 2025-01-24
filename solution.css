@@ -1,0 +1,19 @@
+To reliably ensure the `width: 100%` style is applied, use the more specific selector first or refactor the CSS for better clarity and predictability. For instance:
+
+```css
+#container {
+  width: 100%;
+}
+
+#container.container {
+  width: 100%; /*Redundant but ensures the highest specificity*/
+}
+
+.container {
+  width: 50%;
+}
+
+<div id="container" class="container"></div>
+```
+
+Alternatively, to improve readability and reduce complexity, consider using a more structured approach by nesting selectors or using CSS preprocessors such as Sass or Less.
