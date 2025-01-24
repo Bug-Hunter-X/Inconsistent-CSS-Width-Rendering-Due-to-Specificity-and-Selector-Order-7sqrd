@@ -1,0 +1,15 @@
+The following CSS code snippet exhibits an uncommon issue related to the specificity of CSS selectors:
+
+```css
+.container {
+  width: 50%;
+}
+
+#container {
+  width: 100%;
+}
+
+<div class="container" id="container"></div>
+```
+
+The `#container` selector has a higher specificity than `.container`, so the `width: 100%` should override `width: 50%`. However, depending on the order of the selectors and the browser's CSS parsing engine, the final rendered width may not always be `100%`.
